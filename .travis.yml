@@ -6,7 +6,5 @@ before_install:
   bash
 notifications:
   slack:
-    on_success: always
-    on_failure: always
     rooms:
       secure: GWWd2Yb0IOelMALA9C8QgraqRS4vRWBcmLujxmq1Pw1WHHVlQ9lq2mdkM6lV2MArTZb+J81h3vP70wkTfu8dbf9oltq7cT+ew5nbI7z4sC0K5SGyve6O8bLZmOmkJ+dRK3/e8wwlT9J0XvtNOs5jL1JvlimIxMH7QXA5O/fmmbVRGDxei6qMZoLrQIApaHJAZ6ME+DOmpPZpSVytP3Vd7yNYeeaU/lRTJUbjclo5YYI11GaS2+JAikApDHDNEfVH+KVSfbfDGGlptC3WqW6r0ndXmOBEo9yaRiodYIYgOY5VlSaYjis2q9stt9h2souH/OW05MhRbbJWXVpSdjHrMyBQ/xkWc95ScaL+5i+8F7jSt0eBKbEtyjis+K3QZPG+S474eIwTDTCDewhBdHsx9zJ4hc+7lEfvYcsDGhMeCw0Q6fquTQiRUzv3EgdjvtopiTVPFgvmppINZQZ/3xiweK2I1PMR8Od9c6kSNgYhINnphyM5J/eOCshsejNdn3SAxlyuxEpP/BPFyhmhyfRWhoifnZGWJnXeWo3yX83kQE3+fQM66ibHY537KVjdl0kvh2z5QqHAxXzzQuNvYd8F1araaJYOqP+bKnqiPD6ruhokX12uKFhE7Hwiox5mQVkm6iNpPclpMB16j+KFHSffcvGr+1oxMARZvdRMySTLjGE=
