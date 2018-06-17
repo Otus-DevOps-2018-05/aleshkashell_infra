@@ -12,3 +12,7 @@ Host someinternalhost
 
 Подключаться командой:
 ssh someinternalhost
+
+Подключение к внутренней сети:
+bastion_IP = 35.205.217.71
+someinternalhost_IP = 10.132.0.2
