@@ -16,3 +16,4 @@ gcloud compute firewall-rules create default-puma-server --direction=INGRESS --p
 
 testapp_IP=104.155.93.61
 testapp_port=9292
+
