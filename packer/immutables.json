@@ -1,0 +1,55 @@
+{
+    "variables": {
+	    "proj_id" : null,
+	    "src_img" : null,
+	    "machine_t" : "g1-small"
+    },
+    "builders": [
+        {
+            "type": "googlecompute",
+            "project_id": "{{user `proj_id`}}",
+            "image_name": "reddit-base-{{timestamp}}",
+            "image_family": "reddit-full",
+            "source_image_family": "{{user `src_img`}}",
+            "zone": "europe-west1-b",
+            "ssh_username": "appuser",
+            "machine_type": "{{user `machine_t` }}"
+        }
+    ],
+    "provisioners": [
+	{
+	    "type": "shell",
+	    "script": "scripts/install_ruby.sh",
+	    "execute_command": "sudo {{.Path}}"
+	},
+	{
+            "type": "shell",
+            "script": "scripts/install_mongodb.sh",
+            "execute_command": "sudo {{.Path}}"
+        },
+	{
+            "type": "shell",
+            "script": "scripts/deploy.sh",
+            "execute_command": "{{.Path}}"
+        },
+	{
+            "type": "file",
+            "source": "files/reddit.service",
+            "destination": "/tmp/reddit.service"
+	},
+	    {
+	      "type": "shell",
+	      "inline": "sudo mv /tmp/reddit.service /etc/systemd/system/"
+	    },
+	    {
+	      "type": "shell",
+	      "inline": "sudo chown root:root /etc/systemd/system/reddit.service"
+	    },
+	    {
+	      "type": "shell",
+	      "inline": "sudo systemctl enable reddit.service"
+	    }
+    ]
+}
+
+
