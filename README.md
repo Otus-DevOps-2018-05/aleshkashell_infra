@@ -36,7 +36,6 @@ someinternalhost_IP = 10.132.0.2
 - развернуто приложение в gcp
 - сделан скрипт авторазвертки приложения
 - произведена настройка файервола
-
 ## 2. Проверить работоспособность:
 - Перейти по ссылке http://104.155.93.61:9292/
 
@@ -55,8 +54,9 @@ gcloud compute instances create reddit-app\
   --metadata-from-file startup-script=/home/a.sheludchenkov/otus/aleshkashell_infra/startup.sh
 ```
 ### Правило файервола
+```
 gcloud compute firewall-rules create default-puma-server --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:9292 --source-ranges=0.0.0.0/0 --target-tags=puma-server
-
+```
 ## 2. Данные для проверки
 ```
 testapp_IP=104.155.93.61
