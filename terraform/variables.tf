@@ -23,3 +23,7 @@ variable "private_key_path" {
 variable "disk_image" {
   description = "Disk image"
 }
+
+variable "count" {
+  description = "Count of instance"
+}
