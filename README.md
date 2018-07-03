@@ -5,6 +5,7 @@ aleshkashell Infra repository
 - [Cloud bastion](#cloud-bastion)
 - [Cloud testapp](#cloud-testapp)
 - [Packer base](#packer-base)
+- [Terraform-1](#terraform 1)
 
 # Cloud bastion
 
@@ -62,3 +63,13 @@ gcloud compute firewall-rules create default-puma-server --direction=INGRESS --p
 testapp_IP=104.155.93.61
 testapp_port=9292
 ```
+
+# Terraform 1
+
+## 1. Что было сделано
+- Развернуто окружение с использованием terraform
+- Определены переменные для параметров terraform
+- Отформатированы файлы конфигурации terraform
+- Добавален terraform.rfvars.example
+- Добавлены ключи нескольких пользователей в метаданные проетка. Для указания нескольких ключей\пользователей, их необходимо разделять симвовлом переноса строки '\n'
+- Добавлен ключ пользователя в метаданные проекта через интерфей web interface, который удалился при следующем запуске terraform, т.к. он не описан в коде.
