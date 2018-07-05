@@ -3,7 +3,6 @@ resource "google_compute_instance" "db" {
   machine_type = "g1-small"
   zone         = "${var.zone}"
   tags         = ["reddit-db"]
-  count        = "${var.count}"
 
   #Определение загрузочного диска
   boot_disk {
@@ -23,22 +22,6 @@ resource "google_compute_instance" "db" {
 
   metadata {
     ssh-keys = "appuser:${file(var.public_key_path)}"
-  }
-
-  connection {
-    type        = "ssh"
-    user        = "appuser"
-    agent       = "false"
-    private_key = "${file(var.private_key_path)}"
-  }
-
-  provisioner "file" {
-    source      = "files/puma.service"
-    destination = "/tmp/puma.service"
-  }
-
-  provisioner "remote-exec" {
-    script = "files/deploy.sh"
   }
 }
 
