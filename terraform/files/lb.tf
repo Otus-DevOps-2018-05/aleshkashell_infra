@@ -80,3 +80,7 @@ resource "google_compute_global_forwarding_rule" "reddit_app_forwarding_rule" {
   target     = "${google_compute_target_http_proxy.reddit_app_http_proxy.self_link}"
   port_range = "80"
 }
+
+output "balancer_external_ip" {
+  value = "${google_compute_global_forwarding_rule.reddit_app_forwarding_rule.ip_address}"
+}
