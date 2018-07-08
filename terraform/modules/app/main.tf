@@ -46,6 +46,12 @@ resource "null_resource" "app" {
   provisioner "remote-exec" {
     script = "${path.module}/files/deploy.sh"
   }
+
+  provisioner "remote-exec" {
+    inline = [
+      "echo 'export DATABASE_URL=${var.db_ip}' | sudo tee /etc/profile.d/database-url.sh",
+    ]
+  }
 }
 
 resource "google_compute_address" "app_ip" {

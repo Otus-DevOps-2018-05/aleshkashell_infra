@@ -15,3 +15,7 @@ variable "app_disk_image" {
 variable "private_key_path" {
   description = "Path to private key"
 }
+
+variable "db_ip" {
+  description = "IP address of db"
+}
