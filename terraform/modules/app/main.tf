@@ -38,6 +38,13 @@ resource "null_resource" "app" {
     private_key = "${file(var.private_key_path)}"
   }
 
+  provisioner "remote-exec" {
+    inline = [
+      "export DATABASE_URL=${var.db_ip}",
+      "echo 'export DATABASE_URL=${var.db_ip}' | sudo tee /etc/profile.d/database-url.sh",
+    ]
+  }
+
   provisioner "file" {
     source      = "${path.module}/files/puma.service"
     destination = "/tmp/puma.service"
@@ -45,12 +52,6 @@ resource "null_resource" "app" {
 
   provisioner "remote-exec" {
     script = "${path.module}/files/deploy.sh"
-  }
-
-  provisioner "remote-exec" {
-    inline = [
-      "echo 'export DATABASE_URL=${var.db_ip}' | sudo tee /etc/profile.d/database-url.sh",
-    ]
   }
 }
 
