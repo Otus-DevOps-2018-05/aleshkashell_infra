@@ -6,6 +6,7 @@ aleshkashell Infra repository
 - [Cloud testapp](#cloud-testapp)
 - [Packer base](#packer-base)
 - [Terraform-1](#terraform-1)
+- [Terraform-2](#terraform-2)
 
 # Cloud bastion
 
@@ -88,3 +89,12 @@ terrafom apply
 ```
 terraform output balancer_external_ip
 ```
+# Terraform 2
+
+## 1. Что было сделано
+- Импортировано правило файервола в terraform
+- Сделаны ссылки на атрибуты ресурсов
+- Созданы отдельные модули для каждой ВМ
+- Создан модуль с правилами файервола
+- Настроено хранение state-файлов для prod и stage в удаленном backend. Система блокировок работает корректно.
+
