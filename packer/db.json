@@ -28,13 +28,8 @@
     ],
     "provisioners": [
       {
-        "type": "shell",
-        "script": "{{template_dir}}/scripts/install_mongodb.sh",
-        "execute_command": "sudo {{.Path}}"
-      },
-      {
-        "type": "shell",
-        "inline": ["sudo sed -i '/bindIp:/c\\  bindIp: 0.0.0.0' /etc/mongod.conf"]
+        "type": "ansible",
+        "playbook_file": "ansible/packer_db.yml"        
       }
     ]
   }
