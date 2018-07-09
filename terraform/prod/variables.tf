@@ -42,3 +42,8 @@ variable "bucket" {
   description = "Bucket for terraform state"
   default     = "infra-bucket-prod"
 }
+
+variable "need_provision" {
+  description = "Condition for provision"
+  default     = "0"
+}

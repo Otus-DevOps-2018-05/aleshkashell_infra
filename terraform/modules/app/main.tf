@@ -30,6 +30,8 @@ resource "google_compute_instance" "app" {
 }
 
 resource "null_resource" "app" {
+  count = "${var.need_provision}"
+
   connection {
     type        = "ssh"
     host        = "${google_compute_address.app_ip.address}"
