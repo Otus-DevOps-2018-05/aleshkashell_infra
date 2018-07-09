@@ -8,6 +8,7 @@ aleshkashell Infra repository
 - [Terraform-1](#terraform-1)
 - [Terraform-2](#terraform-2)
 - [Ansible-1](#ansible-1)
+- [Ansible-2](#ansible-2)
 
 # Cloud bastion
 
@@ -114,6 +115,7 @@ terraform output app_external_ip
 ```
 
 # Ansible 1
+
 ## 1. Что сделано
 - Создано окружение для ansible (кофигурация, инвентори, плейбук)
 - Протестирована работа модулей и плейбуков. При повторном запуске плейбука в случае, если выполнять нечего, то результатом возврата будет "OK", иначе будут произведены изменения и будет возвращено "changed"
@@ -124,6 +126,8 @@ terraform output app_external_ip
 ansible-playbook clone.yml
 ```
 
+# Ansible 2
 
-
+## 1. Что сделано
+- Настройка инстанса для приложения
 
