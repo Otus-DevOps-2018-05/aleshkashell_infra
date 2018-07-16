@@ -6,7 +6,7 @@ before_install:
   bash
 
 install:
-- wget -O - https://releases.hashicorp.com/packer/1.2.4/packer_1.2.4_linux_amd64.zip | unzip -d /usr/bin - 
+- wget -O https://releases.hashicorp.com/packer/1.2.4/packer_1.2.4_linux_amd64.zip && unzip -d /usr/bin packer_1.2.4_linux_amd64.zip
 
 script:
 - packer validate var-file=packer/variables.json.example packer/db.json
