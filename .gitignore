@@ -6,3 +6,4 @@ packer/variables.json
 .terraform/
 .history/
 *.retry
+jdauphant.nginx
