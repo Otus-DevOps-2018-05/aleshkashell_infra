@@ -4,7 +4,10 @@ language: bash
 before_install:
 - curl https://raw.githubusercontent.com/express42/otus-homeworks/2018-05/run.sh |
   bash
-
+brances:
+  only:
+    - ansible-3
+    
 install:
 - wget https://releases.hashicorp.com/packer/1.2.4/packer_1.2.4_linux_amd64.zip -O packer_1.2.4_linux_amd64.zip && sudo unzip -d /usr/bin/ packer_1.2.4_linux_amd64.zip && rm -rf packer_1.2.4_linux_amd64.zip
 
