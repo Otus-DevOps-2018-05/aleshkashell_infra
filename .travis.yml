@@ -21,7 +21,7 @@ install:
 script:
 - packer validate -var-file=packer/variables.json.example packer/app.json
 - packer validate -var-file=packer/variables.json.example packer/db.json
-- cd terraform/prod && terraform init && terraform validate --var-file=terraform.tfvars.example
+- cd terraform/prod && terraform init -backend=false && terraform validate --var-file=terraform.tfvars.example
 
 notifications:
   slack:
