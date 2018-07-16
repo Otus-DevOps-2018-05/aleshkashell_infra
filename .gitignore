@@ -7,3 +7,5 @@ packer/variables.json
 .history/
 *.retry
 jdauphant.nginx
+vault.key
+
