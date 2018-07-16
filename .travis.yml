@@ -8,9 +8,8 @@ brances:
   only:
     - ansible-3
 env:
-  matrix:
-    - environment=prod
-    - environment=stage
+  - ENVIRONMENT=prod
+  - ENVIRONMENT=stage
 
 install:
 - sudo pip install ansible
@@ -21,8 +20,7 @@ install:
 script:
 - packer validate -var-file=packer/variables.json.example packer/app.json
 - packer validate -var-file=packer/variables.json.example packer/db.json
-- terraform init terrafrom/${environment}
-- terraform validate --var-file=terraform/${environment}/terraform.tfvars.example terraform/${environment}
+- cd terrafrom/${ENVIRONMENT} && terraform init && terraform validate --var-file=terraform.tfvars.example
 
 notifications:
   slack:
