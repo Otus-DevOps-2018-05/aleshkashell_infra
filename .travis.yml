@@ -14,7 +14,10 @@ install:
 - wget https://releases.hashicorp.com/packer/1.2.4/packer_1.2.4_linux_amd64.zip -O packer_1.2.4_linux_amd64.zip && sudo unzip -d /usr/bin/ packer_1.2.4_linux_amd64.zip && rm -rf packer_1.2.4_linux_amd64.zip
 
 script:
+- packer validate -var-file=packer/variables.json.example packer/app.json
 - packer validate -var-file=packer/variables.json.example packer/db.json
+- packer validate -var-file=packer/variables.json.example packer/ubuntu16.json
+
 
 notifications:
   slack:
