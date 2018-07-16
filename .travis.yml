@@ -8,8 +8,9 @@ brances:
   only:
     - ansible-3
 env:
-  - ENVIRONMENT=prod
-  - ENVIRONMENT=stage
+  matrix:
+    - ENVIRONMENT=prod
+    - ENVIRONMENT=stage
 
 install:
 - sudo pip install ansible
