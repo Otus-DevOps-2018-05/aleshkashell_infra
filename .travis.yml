@@ -7,9 +7,10 @@ before_install:
 brances:
   only:
     - ansible-3
-environment:
-- prod
-- stage
+env:
+  matrix:
+    - environment=prod
+    - environment=stage
 
 install:
 - sudo pip install ansible
@@ -20,7 +21,8 @@ install:
 script:
 - packer validate -var-file=packer/variables.json.example packer/app.json
 - packer validate -var-file=packer/variables.json.example packer/db.json
-
+- terraform init terrafrom/${environment}
+- terraform validate --var-file=terraform/${environment}/terraform.tfvars.example terraform/${environment}
 
 notifications:
   slack:
