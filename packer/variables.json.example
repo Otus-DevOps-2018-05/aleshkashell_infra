@@ -1,5 +1,6 @@
 {
 	"proj_id": "infra-xxxxxxx",
+	"project_id": "infra-xxxxx",
 	"src_img": "ubuntu-1604-lts"
 }
 
