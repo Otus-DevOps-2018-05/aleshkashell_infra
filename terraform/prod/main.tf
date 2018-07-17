@@ -19,6 +19,7 @@ module "app" {
   zone             = "${var.zone}"
   app_disk_image   = "${var.app_disk_image}"
   db_ip            = "${module.db.db_internal_ip}"
+  need_provision   = "${var.need_provision}"
 }
 
 module "db" {
@@ -30,5 +31,5 @@ module "db" {
 
 module "vpc" {
   source        = "../modules/vpc"
-  source_ranges = ["46.188.102.39/32"]
+  source_ranges = ["46.148.194.254/32"]
 }

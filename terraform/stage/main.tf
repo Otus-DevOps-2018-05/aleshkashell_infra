@@ -19,6 +19,7 @@ module "app" {
   app_disk_image   = "${var.app_disk_image}"
   private_key_path = "${var.private_key_path}"
   db_ip            = "${module.db.db_internal_ip}"
+  need_provision   = "${var.need_provision}"
 }
 
 module "db" {

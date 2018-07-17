@@ -19,3 +19,7 @@ variable "private_key_path" {
 variable "db_ip" {
   description = "IP address of db"
 }
+
+variable "need_provision" {
+  description = "Condition for provision"
+}

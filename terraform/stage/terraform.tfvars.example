@@ -9,3 +9,5 @@ disk_image = "reddit-base"
 count = 1
 
 bucket = "infra-bucket-stage"
+
+need_provision = 1
