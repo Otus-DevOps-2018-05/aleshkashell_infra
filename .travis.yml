@@ -19,6 +19,7 @@ install:
 - wget https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_amd64.zip -O terraform_0.11.7_linux_amd64.zip && sudo unzip -d /usr/bin/ terraform_0.11.7_linux_amd64.zip && rm -rf terraform_0.11.7_linux_amd64.zip
 
 script:
+- mkdir -p /home/travis/.ssh/ && touch /home/travis/.ssh/appuser.pub && touch /home/travis/.ssh/appuser
 - packer validate -var-file=packer/variables.json.example packer/app.json
 - packer validate -var-file=packer/variables.json.example packer/db.json
 - cd terraform/prod && terraform init -backend=false && terraform validate --var-file=terraform.tfvars.example
