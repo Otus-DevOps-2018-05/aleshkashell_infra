@@ -141,3 +141,23 @@ ansible-playbook site.yml
 ## 3. Как проверить
 - Перейти по адресу http://'application ip':9292
 
+# Ansible 3
+
+## 1. Что сделано
+- Созданы роли для приложения и БД
+- Созданы окружения в ansible и определено окружение по умолчанию
+- Переорганизованы плейбуки
+- Добалено открытие 80 порта в терраформ
+- Добавлена роль jdauphant.nginx
+- Созданы зашифрованные credentials с помощью ansible-vault
+- Настроено использование dynamic inventory
+- Добавлены проверки в travis с использованием ansible-lint, tflint и packer. Проверки отрабатывают только для master и pull requests
+
+## 2. Как запустить проект
+- Из директории anbile:
+```
+ansible-playbook playbooks/site.yml
+```
+## 3. Как проверить
+- Перейти по адресу http://'application ip':9292
+
