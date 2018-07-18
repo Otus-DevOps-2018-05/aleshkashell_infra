@@ -1,5 +1,5 @@
 # aleshkashell_infra
-aleshkashell Infra repository
+aleshkashell Infra repository  [![Build Status](https://travis-ci.com/Otus-DevOps-2018-05/aleshkashell_infra.svg?branch=master)](https://travis-ci.com/Otus-DevOps-2018-05/aleshkashell_infra)
 
 # Table of content
 - [Cloud bastion](#cloud-bastion)
@@ -9,6 +9,7 @@ aleshkashell Infra repository
 - [Terraform-2](#terraform-2)
 - [Ansible-1](#ansible-1)
 - [Ansible-2](#ansible-2)
+- [Ansible-3](#ansible-3)  [![Build Status](https://travis-ci.com/Otus-DevOps-2018-05/aleshkashell_infra.svg?branch=ansible-3)](https://travis-ci.com/Otus-DevOps-2018-05/aleshkashell_infra)
 
 # Cloud bastion
 
