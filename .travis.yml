@@ -22,7 +22,7 @@ script:
 - mkdir -p /home/travis/.ssh/ && touch /home/travis/.ssh/appuser.pub && touch /home/travis/.ssh/appuser
 - packer validate -var-file=packer/variables.json.example packer/app.json
 - packer validate -var-file=packer/variables.json.example packer/db.json
-- cd terraform/prod && terraform init -backend=false && terraform validate --var-file=terraform.tfvars.example
+- cd terraform/${ENVIRONMENT} && terraform init -backend=false && terraform validate --var-file=terraform.tfvars.example
 
 notifications:
   slack:
