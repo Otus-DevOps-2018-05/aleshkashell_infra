@@ -1,7 +1,7 @@
 - name: Deploy App
   hosts: app
   vars:
-    deploy_user: appuser
+    deploy_user: ubuntu
 
   tasks:
     - name: Fetch the latest version of application code
@@ -9,6 +9,7 @@
         repo: 'https://github.com/express42/reddit.git'
         dest: "/home/{{ deploy_user }}/reddit"
         version: monolith
+      become_user: "{{ deploy_user }}"
       notify: restart puma
 
     - name: bundle install
