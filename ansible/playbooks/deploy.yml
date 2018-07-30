@@ -10,6 +10,7 @@
         dest: "/home/{{ deploy_user }}/reddit"
         version: monolith
       become_user: "{{ deploy_user }}"
+      become: true
       notify: restart puma
 
     - name: bundle install
