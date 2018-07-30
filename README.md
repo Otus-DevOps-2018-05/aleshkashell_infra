@@ -10,6 +10,7 @@ aleshkashell Infra repository
 - [Ansible-1](#ansible-1)   [![Build Status](https://travis-ci.com/Otus-DevOps-2018-05/aleshkashell_infra.svg?branch=ansible-1)](https://travis-ci.com/Otus-DevOps-2018-05/aleshkashell_infra)
 - [Ansible-2](#ansible-2)   [![Build Status](https://travis-ci.com/Otus-DevOps-2018-05/aleshkashell_infra.svg?branch=ansible-2)](https://travis-ci.com/Otus-DevOps-2018-05/aleshkashell_infra)
 - [Ansible-3](#ansible-3)   [![Build Status](https://travis-ci.com/Otus-DevOps-2018-05/aleshkashell_infra.svg?branch=ansible-3)](https://travis-ci.com/Otus-DevOps-2018-05/aleshkashell_infra)
+- [Ansible-4](#ansible-4)   [![Build Status](https://travis-ci.com/Otus-DevOps-2018-05/aleshkashell_infra.svg?branch=ansible-4)]
 
 # Cloud bastion
 
@@ -161,3 +162,26 @@ ansible-playbook playbooks/site.yml
 ## 3. Как проверить
 - Перейти по адресу http://'application ip':9292
 
+# Ansible 4
+
+## 1. Что сделано
+- Установлен vagrant
+- Произведено развертывание окружение с помощью vagrant
+- Адаптированы роли ansible
+- Произведена настройка проксирования nginx
+- Установлено и опробовано molecule для тестирования роли db
+- Создана проверка, что db слушает на порту
+- Роли db и app использованы в packer'е.
+- Роль db вынесена в отдельный репозиторий и подключения через requirements.yml
+- К роли db подключен travisCI для автоматического прогона тестов
+- К роли db сделан бейдж со статусом билда
+- Сделано оповещние о статусей билда роли db в slack
+
+## 2. Как запустить проект
+- Из директории ansible
+```
+vagrant up
+```
+
+## 3. Как проверить
+- Перейти по адресу http://10.10.10.20
