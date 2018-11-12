@@ -1,7 +1,12 @@
 ---
 - name: Configure application
-  hosts: reddit-app
+  hosts: appserver
   become: true
   roles:
     - app
-    - jdauphant.nginx
+    - role: jdauphant.nginx
+      nginx_sites:
+        puma.local:
+          - listen 80
+          - location / { proxy_pass http://127.0.0.1:9292; proxy_http_version 1.1; }
+
